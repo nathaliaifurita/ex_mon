@@ -22,7 +22,14 @@ defmodule ExMon.Game.Actions.Attack do
 
   defp update_opponent_life(life, opponent) do
     opponent
-    |> Game.fetch_player()
-    |> Map.put(:life, life)
+    |> Game.fetch_player() #vai pegar o struct de um player: computer ou player
+    |> Map.put(:life, life) #Map.put vai atualizar e retorna um novo com o valor atualizado
+    |> update_game(opponent) #atualiza ou computador ou no player a nova struct com o novo valor de vida
+  end
+
+  defp update_game(player, opponent) do
+    Game.info()
+    |> Map.put(opponent, player)
+    |> Game.update()
   end
 end
