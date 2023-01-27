@@ -17,7 +17,7 @@ defmodule ExMon.Game do
     Agent.get(__MODULE__, & &1)
   end
 
-  # vai receber um estado e vai subscreber com a função update 
+  # vai receber um estado e vai subscrever com a função update 
   def update(state) do
     Agent.update(__MODULE__, fn _ -> update_game_status(state) end)
   end
