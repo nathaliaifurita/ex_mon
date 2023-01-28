@@ -49,6 +49,6 @@ defmodule ExMon do
     do_move(move)
   end
 
-  #quando for qualquer coisa diferente de :continue, vai devolver um ok (nao vai influenciar em nada)
+  # quando for qualquer coisa diferente de :continue, vai devolver um ok (nao vai influenciar em nada)
   defp computer_move(_), do: :ok
 end
